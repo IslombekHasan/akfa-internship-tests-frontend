@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="css/iziModal.min.css">
+    <link rel="stylesheet" href="css/countdown.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="page-wrapper">
+        <header>
+            <div class="container">
+                <nav class="navbar">
+                    <p class="page-nav-header-text">Подайте заявку на стажировку в группе компаний Akfa</p>
+                    <div class="steps">
+                        <a href="#" class="step-link ">Шаг 1</a>
+                        <a href="#" class="step-link ">Шаг 2</a>
+                        <a href="#" class="step-link ">Шаг 3</a>
+                        <a href="#" class="step-link active">Шаг 4</a>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <div class="content">
+            <div class="container">
+                <div class="page-header-block">
+                    <h1 class="black-header">Пройдите тестирование</h1>
+                    
+                </div>
+            </div>
+            <div class="page-content">
+                <div class="container test-container">
+                    <div class="countdown">
+                        <div class="circle"> <svg width="161" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+                            <g transform="translate(110,110)">
+                                <circle r="100" class="e-c-base"/>
+                                <g transform="rotate(-90)">
+                                <circle r="100" class="e-c-progress"/>
+                                <g id="e-pointer">
+                                    <circle cx="100" cy="0" r="8" class="e-c-pointer"/>
+                                </g>
+                                </g>
+                            </g>
+                        </svg> </div>
+                        <div class="controlls">
+                            <p class=".text-extra-small ">Осталось</p>
+                            <b class="display-remain-time">00:30</b>
+                            <b class="display-remain-time">Минут</b>
+                        </div>
+                    </div>
+                    <div class="test-wrapper">
+                        <div class="test">
+                            <div class="order-numbers">
+                                <p class="order-number">1</p>
+                            </div>
+                            <div class="question">
+                                
+                                <p>В парке 8 скамеек. Три покрасили.</p> 
+                                <p>Сколько скамеек стало в парке?</p>
+
+                                <div class="answers">
+                                    <div class="answer">
+                                        <input type="radio" class="answer-radio" name="question-1" value="8 скамеек" id="answer-1">
+                                        <label for="answer-1">8 скамеек</label>
+                                    </div>
+                                    <div class="answer">
+                                        <input type="radio" class="answer-radio" name="question-1" value="8 скамеек" id="answer-2">
+                                        <label for="answer-2">5 скамеек</label>
+                                    </div>
+                                    <div class="answer">
+                                        <input type="radio" class="answer-radio" name="question-1" value="3 скамеек" id="answer-3">
+                                        <label for="answer-3">3 скамеек</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="test">
+                            <div class="order-numbers">
+                                <p class="order-number">2</p>
+                            </div>
+                            <div class="question">
+                                <p>В парке 8 скамеек. Три покрасили.</p> 
+                                <p>Сколько скамеек стало в парке?</p>
+
+                                <div class="answers">
+                                    <div class="answer">
+                                        <input type="radio" class="answer-radio" name="question-1" value="8 скамеек" id="answer-1">
+                                        <label for="answer-1">8 скамеек</label>
+                                    </div>
+                                    <div class="answer">
+                                        <input type="radio" class="answer-radio" name="question-1" value="8 скамеек" id="answer-2">
+                                        <label for="answer-2">5 скамеек</label>
+                                    </div>
+                                    <div class="answer">
+                                        <input type="radio" class="answer-radio" name="question-1" value="3 скамеек" id="answer-3">
+                                        <label for="answer-3">3 скамеек</label>
+                                    </div>
+                                </div><br><br><br>
+                                <a href="#" class="btn" id="finish-test">Завершить тестирование</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="navigation-wrapper">
+                        <div class="navigation">
+                            <div class="nav-countdown">
+                                <p class="extra-small-text">Осталось: <span id="mobile-minute">15</span> минут</p><br>
+                                <div class="process">
+                                    <div class="completed" id="mobile-countdown"></div>
+                                </div>
+                            </div><br>
+                            <p class="nav-header"><span id="current-num">1</span> из <span id="total-num">40</span> вопросов</p>
+                            <div class="process">
+                                <div class="completed" id="completed"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="izimodal" id="thanks-modal">
+            <h2 class="medium-header">Поздравляем с успешным прохождением теста!</h2>
+            <div class="output">
+                <h2>ВАШ РЕЗУЛЬТАТ:</h2>
+                <h1>78 БАЛЛОВ</h1>
+            </div>
+            <p class="text">Мы свяжемся с вами в ближайшее время.</p><br><br><br>
+            <a href="index.html" class="btn">Выйти на главную</a>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>  
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="js/iziModal.min.js"></script>
+    <script src="js/countdown.js"></script>
+    <script src="js/script.js"></script>
+    
+</body>
+</html>

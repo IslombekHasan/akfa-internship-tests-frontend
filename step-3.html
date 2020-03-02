@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="page-wrapper">
+        <header>
+            <div class="container">
+                <nav class="navbar">
+                    <p class="page-nav-header-text">Подайте заявку на стажировку в группе компаний Akfa</p>
+                    <div class="steps">
+                        <a href="step-1.html" class="step-link ">Шаг 1</a>
+                        <a href="step-2.html" class="step-link ">Шаг 2</a>
+                        <a href="step-3.html" class="step-link active">Шаг 3</a>
+                        <a href="step-4.html" class="step-link">Шаг 4</a>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <div class="content">
+            <div class="container">
+                <div class="page-header-block">
+                    <a href="#" class="back-link"><img src="images/back.png">Назад</a>
+                    <h1 class="black-header">Заполните свои персональные данные</h1>
+                    
+                </div>
+            </div>
+            <div class="page-content">
+                <div class="container">
+                    <form id="info-form">
+                        <div class="row form-row">
+                            <div class="main-information">
+                                <h5 class="col-header">Общая информация</h5>
+                                <div class="form-control" >
+                                    <label for="name">ФИО</label>
+                                    <input type="text" name="full_name" class="input required" placeholder="Ахмаджонов Нодир" id="name">
+                                </div>
+                                <div class="form-control" >
+                                    <label for="birth">Дата рождения</label>
+                                    <input type="text" name="birth_date" class="input required" placeholder="11.07.1996" id="birth">
+                                </div>
+                                <div class="form-control" >
+                                    <label for="family_status">Семейное положение</label>
+                                    <div class="custom-select">
+                                        <select name="family_status" id="family-status">
+                                            <option value="Разведен/разведена">Разведен/разведена</option>
+                                            <option value="Женат / Замужем">Женат / Замужем</option>
+                                            <option value="Состою в гражданском браке">Состою в гражданском браке</option>
+                                            <option value="Не замужем / не женат">Не замужем / не женат</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-control">
+                                    <label for="address">Домашний адрес</label>
+                                    <input type="text" name="address" class="input required" id="address" placeholder="г. Ташкент, А. Кадирий 58А-1">
+                                </div>
+                                <div class="form-control">
+                                    <label for="phone_number">Контактный телефон</label>
+                                    <input type="text" name="phone_number" class="input required" id="number" placeholder="+ (998) 90 999-20-40">
+                                </div>
+                                <div class="form-control">
+                                    <label for="email">Электронная почта</label>
+                                    <input type="text" name="email" class="input required" id="email" placeholder="3363302@gmail.com">
+                                </div>
+                                <div class="form-control">
+                                    <label for="file">Ваше фото и резюме (при наличии)</label>
+                                    <div class="drag-drop">
+                                        <input type="file" id="file" name="file">
+                                        <label for="file" class="file-box" id="dragZone">
+                                            <div>
+                                                <img src="images/upload-icon.png">
+                                                <p class="file-text" id="value-header">Перенесите файл сюда или</p>
+                                                <p id="file-value">загрузите с компьютера</p>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="education-information">
+                                <div id="education" class="education">
+                                    <h5 class="col-header">Образование</h5>
+                                    <div class="edu-inputs">
+                                        <div class="form-control">
+                                            <label for="university ">Наименование учебного заведения</label>
+                                            <input type="text" class="input required" id="university" name="institution" placeholder="Ташкентский Государственный Политехнических институт">
+                                        </div>
+                                        <div class="form-control">
+                                            <label>Период обучения</label>
+                                            <div class="period-education">
+                                                <div class="periods">
+                                                    <label for="from">с</label>
+                                                    <div class="custom-select">
+                                                        <select name="from" id="from" class="year">
+                                                            <!-- <option value="2017">2017</option>
+                                                            <option value="2017">2018</option>
+                                                            <option value="2017">2019</option>
+                                                            <option value="2017">2020</option>
+                                                            <option value="2017">2021</option> -->
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="periods">
+                                                    <label for="to">по</label>
+                                                    <div class="custom-select">
+                                                        <select name="to" id="to" class="year">
+                                                            <!-- <option value="2017">2017</option>
+                                                            <option value="2017">2018</option>
+                                                            <option value="2017">2019</option>
+                                                            <option value="2017">2020</option>
+                                                            <option value="2017">2021</option> -->
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-control">
+                                            <label for="specialization">Специальность</label>
+                                            <input type="text" name="speciality" class="input required" id="specialization" placeholder="Слесарь">
+                                        </div>
+                                        <div class="form-control">
+                                            <label for="degree">Степень / курс</label>
+                                            <input type="text" name="course" class="input required" id="degree" placeholder="Бакалавр">
+                                        </div>
+                                    </div>
+                                    <a href="javascript:void(0)" class="add-education-block add-education"><img src="images/plus.png"> Добавить учебное заведение</a>
+                                </div>
+                                
+                                <div class="language">
+                                    <h5 class="col-header">Языковые знания</h5>
+                                    <div class="table-container">
+                                        <table class="language-table">
+                                            <tr>
+                                                <th>Узбекский</th>
+                                                <td>
+                                                    <input type="radio" class="language-radio" name="uzbek" id="uz-starter" value="starter" checked>
+                                                    <label for="uz-starter">Начальный</label> 
+                                                </td>
+                                                <td>
+                                                    <input type="radio" class="language-radio" name="uzbek" id="uz-intermediate" value="intermediate">
+                                                    <label for="uz-intermediate">Средний</label> 
+                                                </td>
+                                                <td>
+                                                    <input type="radio" class="language-radio" name="uzbek" id="uz-advanced" value="advanced">
+                                                    <label for="uz-advanced">Отличный</label> 
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Русский</th>
+                                                <td>
+                                                    <input type="radio" class="language-radio" name="russian" id="ru-starter" value="starter" checked>
+                                                    <label for="ru-starter">Начальный</label> 
+                                                </td>
+                                                <td>
+                                                    <input type="radio" class="language-radio" name="russian" id="ru-intermediate" value="intermediate">
+                                                    <label for="ru-intermediate">Средний</label> 
+                                                </td>
+                                                <td>
+                                                    <input type="radio" class="language-radio" name="russian" id="ru-advanced" value="advanced">
+                                                    <label for="ru-advanced">Отличный</label> 
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Английский</th>
+                                                <td>
+                                                    <input type="radio" class="language-radio" name="english" id="eng-starter" value="starter" checked>
+                                                    <label for="eng-starter">Начальный</label> 
+                                                </td>
+                                                <td>
+                                                    <input type="radio" class="language-radio" name="english" id="eng-intermediate" value="intermediate">
+                                                    <label for="eng-intermediate">Средний</label> 
+                                                </td>
+                                                <td>
+                                                    <input type="radio" class="language-radio" name="english" id="eng-advanced" value="advanced">
+                                                    <label for="eng-advanced">Отличный</label> 
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="extra-language">
+                                        <div class="extra-language-box">
+                                            <a href="javascript:void(0)" class="add-education-block"><img src="images/plus.png"> Добавить язык</a>
+                                        </div>
+                                        <div class="extra-language-box">
+                                            <label for="purpose">Цель получения практики</label>
+                                            <input type="text" name="purpose" class="input" id="language-expiriance" placeholder="Опыт">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-wrapper no-padding">
+                            <input type="submit" class="btn" value="Подтвердить и начать тестирование">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/imask"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>  
+    <script src="js/year-select.js"></script>
+    <script src="js/validation.js"></script>
+</body>
+</html>
