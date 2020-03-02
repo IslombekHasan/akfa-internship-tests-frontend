@@ -251,3 +251,21 @@ $('.remove').click(function(e) {
   $(this).parent().parent().parent().remove();
   suffix--;
 });
+
+
+$('#language-choice').iziModal({
+  headerColor: 'rgba(0, 0, 0, .05)',
+  width: 671,
+  // timeout: 10000,
+  zindex: 9999999,
+  background: '#f4f4f4',
+  overlayClose: false,
+  transitionIn: 'fadeIn',
+  transitionOut: 'fadeOut',
+  overlayColor: 'rgba(0,0,0,.5)',
+});
+
+/* use this when you submit form to the server 
+$('#language-choice').iziModal('open');
+
+*/
