@@ -218,3 +218,38 @@ $(".add-education").click(function(e) {
   cloned.insertAfter(lastRepeatingGroup);
   resetAttributeNames(cloned);
 });
+
+langamount = 3;
+$(".add-lang").click(function(e) {
+  e.preventDefault();
+
+  var lastRepeatingGroup = $(".language-table");
+
+  langamount++;
+
+  var cloned = "<tr>Hellow</tr>";
+  lastRepeatingGroup.append(`
+  <tr>
+    <th><input class="input required no-padding" placeholder="Название языка" name="lang-`+ langamount + `"></th>
+    <td>
+        <input type="radio" class="language-radio" name="lang-`+ langamount + `" id="eng-starter" value="starter" checked>
+        <label for="eng-starter">Начальный</label> 
+    </td>
+    <td>
+        <input type="radio" class="language-radio" name="lang-`+ langamount + `" id="eng-intermediate" value="intermediate">
+        <label for="eng-intermediate">Средний</label> 
+    </td>
+    <td>
+        <input type="radio" class="language-radio" name="lang-`+ langamount + `" id="eng-advanced" value="advanced">
+        <label for="eng-advanced">Отличный</label> 
+    </td>
+  </tr>
+  `);
+  // cloned.insertAfter(lastRepeatingGroup);
+
+});
+
+$('.remove').click(function(e) {
+  e.preventDefault();
+  $(this).parent().parent().parent().remove();
+});

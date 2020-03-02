@@ -1453,3 +1453,17 @@ header span:hover .dropdown ~ a::after {
 .vacancy:not(.is-active) {
     display: none;
 }
+.no-padding {
+    padding: 0px;
+}
+.remove {
+    color: red;
+    text-align: right;
+}
+.edu-inputs:nth-of-type(1) .remove {
+    display: none;
+}
+label[for=university] {
+    display: flex;
+    justify-content: space-between;
+}
