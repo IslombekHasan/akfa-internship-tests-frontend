@@ -830,6 +830,7 @@ body {
 
 
 .countdown {
+    z-index: 99999;
     background: #fff;
     border-radius: 50%;
     padding: 10px;
@@ -972,7 +973,40 @@ g:hover path {
 #language-choice a:hover {
     background: rgba(0, 0, 0, 0.04);
 }
+.page-content {
+    min-height: 63vh;
+}
+.answers {
+    height: 100%;
+    flex-wrap: wrap;
+}
+.answer {
+    height: 63px;
+}
+.question  {
+    width: 1020px;
+}
+.question-img {
+    width: 359px;
+    height: 207px;
+    display: inline-block !important;
+    margin: 20px 10px 0px 0px;
+}
 @media screen and (max-width: 980px) {
+    .question {
+        width: 100%;
+    }
+    .question-img {
+        width: 140px;
+        height: 90px;
+        display: inline-block !important;
+    }
+    .answers {
+        height: unset;
+    }
+    .page-content {
+        min-height: unset;
+    }
     .container {
         width: 100%;
         box-sizing: border-box;
@@ -1130,7 +1164,7 @@ g:hover path {
     }
     .answer {
         margin-right: 10px;
-        margin-bottom: 30px;
+        margin-bottom: 0px;
     }
     .answer label {
         font-size: 14px;
@@ -1301,6 +1335,9 @@ g:hover path {
     }
     .page-wrapper .navbar {
         flex-direction: column;
+    }
+    .page-wrapper .btn {
+        padding: 17px 18px;
     }
 }
 @media screen and (min-width: 500px) and (max-width: 980px) {
@@ -1516,3 +1553,17 @@ label[for=university] {
     justify-content: space-between;
 }
 
+.preloader {
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background: #F4F4F4;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.page-content {
+    position: relative;
+}
