@@ -111,36 +111,45 @@ $('#info-form').submit(function () {
     }
   }
 
-  // if (!error) {
-  let formData = new FormData(document.getElementById('info-form'));
+  if (!error) {
+    let formData = new FormData(document.getElementById('info-form'));
 
-  let educations = []
-  let language_skills = [{
-    language: 'string',
-    skill: 'string'
-  }]
+    let educations = [];
+    let language_skills = [];
 
-  let index = 0
-  for (let [key, value] of formData.entries()) {
-    console.log(key, ':', value);
+    let index = 0
+    for (let [key, value] of formData.entries()) {
+      let institution = key.match(/institution\d*/);
+      if (institution) {
+        index = parseInt(institution[0].slice(-1)) || 0
+        if (!educations[index]) educations[index] = {}
+        educations[index].institution = value
+      }
 
-    let institution = key.match(/institution\d*/)
-    if (institution) {
-      index = parseInt(institution[0].slice(-1)) || 0
-      if (!educations[index]) educations[index] = {}
-      educations[index].institution = value
+      if (key.match(/from\d*/)) educations[index].entry_date = `${value}-01-01`
+      if (key.match(/to\d*/)) educations[index].end_date = `${value}-01-01`
+      if (key.match(/speciality\d*/)) educations[index].speciality = value
+      if (key.match(/course\d*/)) educations[index].course = value
+
+      let language = key.match(/lang-\d*/);
+      if (language) {
+        index = parseInt(language[0].slice(-1)) || 0;
+        if (!language_skills[index]) language_skills.push({});
+        language_skills[index].language = value;
+      }
+
+      if (key.match(/skill\d*/)) language_skills[index].skill = value
     }
 
-    if (key.match(/from\d*/)) educations[index].entry_date = `${value}-01-01`
-    if (key.match(/to\d*/)) educations[index].end_date = `${value}-01-01`
-    if (key.match(/speciality\d*/)) educations[index].speciality = value
-    if (key.match(/course\d*/)) educations[index].course = value
+    formData.append('educations', JSON.stringify(educations));
+    formData.append('language_skills', JSON.stringify(language_skills));
+    console.log(...formData);
+
+    // OLEG SEND YOUR STUFF HERE
+    $.post('URL', formData, (data, status) => {
+      console.log('what up', data, status)
+    })
   }
-
-  formData.append('educations', educations);
-  formData.append('language_skills', language_skills);
-
-  // }
 
   (function () {
     setTimeout(function () {
@@ -148,7 +157,6 @@ $('#info-form').submit(function () {
     }, 5000)
   })();
 });
-
 
 var $fileInput = $('#file');
 var $droparea = $('#dragZone');
@@ -217,36 +225,42 @@ $(".add-education").click(function (e) {
   resetAttributeNames(cloned);
 });
 
-langamount = 3;
-$(".add-lang").click(function(e) {
+langamount = 0;
+$(".add-lang").click(function (e, language = '', skill = 1) {
   e.preventDefault();
 
   var lastRepeatingGroup = $(".language-table");
-  
-  langamount++;
+  var checked1 = skill == 1 ? 'checked' : '';
+  var checked2 = skill == 2 ? 'checked' : '';
+  var checked3 = skill == 3 ? 'checked' : '';
 
   lastRepeatingGroup.append(`
   <tr>
-    <th><input class="input required no-padding" placeholder="Название языка" name="lang-`+ langamount + `"></th>
+    <th><input class="input required no-padding" placeholder="Название языка" name="lang-` + langamount + `" value="` + language +
+    `"></th>
     <td>
-        <input type="radio" class="language-radio" name="lang-`+ langamount + `" id="eng-starter" value="starter" checked>
-        <label for="eng-starter">Начальный</label> 
+        <input type="radio" class="language-radio" name="skill-${langamount}" id="${langamount}-starter" value="starter" ${checked1}>
+        <label for="${langamount}-starter">Начальный</label> 
     </td>
     <td>
-        <input type="radio" class="language-radio" name="lang-`+ langamount + `" id="eng-intermediate" value="intermediate">
-        <label for="eng-intermediate">Средний</label> 
+        <input type="radio" class="language-radio" name="skill-${langamount}" id="${langamount}-intermediate" value="intermediate" ${checked2}>
+        <label for="${langamount}-intermediate">Средний</label> 
     </td>
     <td>
-        <input type="radio" class="language-radio" name="lang-`+ langamount + `" id="eng-advanced" value="advanced">
-        <label for="eng-advanced">Отличный</label> 
+        <input type="radio" class="language-radio" name="skill-${langamount}" id="${langamount}-advanced" value="advanced" ${checked3}>
+        <label for="${langamount}-advanced">Отличный</label> 
     </td>
   </tr>
   `);
-  // cloned.insertAfter(lastRepeatingGroup);
 
+  langamount++;
 });
 
-$('.remove').click(function(e) {
+$(".add-lang").trigger("click", ['Английский']);
+$(".add-lang").trigger("click", ['Русский']);
+$(".add-lang").trigger("click", ['Узбекский'])
+
+$('.remove').click(function (e) {
   e.preventDefault();
   $(this).parent().parent().parent().remove();
   suffix--;
